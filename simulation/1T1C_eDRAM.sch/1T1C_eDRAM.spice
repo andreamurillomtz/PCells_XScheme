@@ -1,0 +1,18 @@
+** sch_path: /foss/designs/PCells_XScheme/1T1C_eDRAM.sch
+**.subckt 1T1C_eDRAM
+M1 BL WL net1 M2N7002 m=1
+C1 net1 GND 1p m=1
+V1 WL GND PULSE(0V
+V2 BL GND PULSE(0V
+**** begin user architecture code
+
+
+.tran 0.1ns 100ns
+.meas tran RetentionTime WHEN v(Storage)=0.3V FALL=1
+.end
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
